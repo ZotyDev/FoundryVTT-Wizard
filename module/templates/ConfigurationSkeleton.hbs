@@ -1,0 +1,46 @@
+{{log this}}
+<div class="content">
+    <div class="topics">
+        {{#each topics}}
+            <div class="topic">
+                <a data-id="{{id}}" class="topic-button{{#if (eq id ../currentTopic.id)}} selected{{/if}}">{{label}}</a>
+            </div>
+        {{/each}}
+    </div>
+
+    {{#if currentTopic}}
+        <div class="configs">
+            {{#with currentTopic}}
+                {{#each settings}}
+                    <div class="config{{#if expanded}} expanded{{/if}}">
+                        <a data-id="{{id}}" class="expand-button"><i data-id="{{id}}" class="fas fa-wrench expand-button"></i></a>
+                        <h4>{{localize label}}</h4>
+
+                        {{#unless expanded}}
+                            <p>{{localize hint}}</p>
+                        {{else}}
+                            {{#each configurations}}
+                                <div class="configuration">
+                                    <div class="hint" data-hint="{{localize hint}}">?</div>
+
+                                    {{#if (eq type "checkbox")}}
+                                        {{> "wizard.config.checkbox"}}
+                                    {{/if}}
+
+                                    <h5>{{localize label}}</h5>
+
+                                    
+                                </div>
+                            {{/each}}
+                        {{/unless}}
+                    </div>
+                {{/each}}
+            {{/with}}
+        </div>
+    {{else}}
+        <div class="changelog">
+            {{{changelog}}}
+        </div>
+    {{/if}}
+
+</div>

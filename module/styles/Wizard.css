@@ -1,0 +1,204 @@
+@font-face {
+  font-family: "Bungee";
+  src: url("../fonts/Bungee-Regular.ttf") format("truetype");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Source Code Pro";
+  src: url("../fonts/SourceCodePro-VariableFont_wght.ttf") format("truetype");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Inter";
+  src: url("../fonts/Inter-VariableFont_slnt,wght.ttf") format("truetype");
+}
+.conf-skeleton-container {
+  background: unset !important;
+  background: rgba(14, 16, 12, 0.25) !important;
+  border-radius: 0px !important;
+  border: 1px solid #D0C39B !important;
+  color: #D0C39B !important;
+  font-family: "Bungee";
+  justify-content: space-between;
+}
+.conf-skeleton-container .window-header {
+  background: unset !important;
+  background: rgba(14, 16, 12, 0.75) !important;
+  border-radius: 0px !important;
+  border: 1px solid #D0C39B !important;
+  color: #D0C39B !important;
+  justify-content: space-between;
+  align-items: center;
+  max-height: 45px;
+  min-height: 45px;
+  height: 45px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.conf-skeleton-container .window-content {
+  background: unset !important;
+  padding: 0px !important;
+}
+.conf-skeleton-container h4 {
+  font-size: 14px;
+  flex: 0 0 auto;
+}
+.conf-skeleton-container a {
+  font-size: 32px;
+  flex: 0 0 auto;
+}
+
+.content {
+  display: flex;
+  width: 100%;
+}
+.content .topics {
+  background: unset !important;
+  background: rgba(14, 16, 12, 0.75) !important;
+  border-radius: 0px !important;
+  border: 1px solid #D0C39B !important;
+  color: #D0C39B !important;
+  position: relative;
+  flex-basis: 15%;
+  height: 700px;
+}
+.content .topics .topic {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.content .topics .topic a {
+  font-size: 14px;
+}
+.content .topics .topic .selected {
+  border-bottom: 2px solid #D0C39B;
+  border-top: 2px solid #D0C39B;
+}
+.content .configs {
+  position: relative;
+  flex-basis: 85%;
+  height: -moz-fit-content;
+  height: fit-content;
+  display: grid;
+  grid-auto-flow: dense;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: max-width;
+  grid-auto-rows: 150px;
+  gap: 10px;
+  padding: 10px;
+  overflow: scroll;
+  max-height: 700px;
+}
+.content .configs .config {
+  background: unset !important;
+  background: rgba(14, 16, 12, 0.5) !important;
+  border-radius: 0px !important;
+  border: 1px solid #D0C39B !important;
+  color: #D0C39B !important;
+  position: relative;
+  font-family: "Inter";
+  margin: 0px;
+}
+.content .configs .config h4 {
+  background: unset !important;
+  background: rgba(14, 16, 12, 0.5) !important;
+  border-radius: 0px !important;
+  border: 1px solid #D0C39B !important;
+  color: #D0C39B !important;
+  text-indent: 25px;
+  padding: 5px;
+  font-weight: 700;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+}
+.content .configs .config a {
+  position: absolute;
+  left: 8px;
+  top: 8px;
+  font-size: 15px;
+}
+.content .configs .config p {
+  margin: 10px;
+  font-size: 14px;
+}
+.content .configs .expanded {
+  grid-row: span 2;
+  grid-column: span 2;
+}
+.content .configs .configuration {
+  margin: 5px;
+}
+.content .configs .configuration .hint {
+  background: unset !important;
+  background: rgba(14, 16, 12, 0.5) !important;
+  border-radius: 0px !important;
+  border: 1px solid #D0C39B !important;
+  color: #D0C39B !important;
+  padding: 1px 5px 1px 5px;
+  cursor: help;
+  float: left;
+  margin-right: 5px;
+}
+.content .configs .configuration .checkbox {
+  float: left;
+  margin: 0px;
+  margin-right: 5px;
+  margin-top: -3px;
+}
+.content .changelog {
+  background: unset !important;
+  background: rgba(14, 16, 12, 0.5) !important;
+  border-radius: 0px !important;
+  border: 1px solid #D0C39B !important;
+  color: #D0C39B !important;
+  font-family: "Inter";
+  width: 100%;
+  text-indent: 15px;
+  overflow: scroll;
+  max-height: 700px;
+  line-height: 1.5;
+}
+.content .changelog h1 {
+  border: unset;
+  font-weight: 900;
+  text-indent: 30px;
+}
+.content .changelog h2 {
+  border: unset;
+  font-weight: 800;
+  text-indent: 30px;
+}
+.content .changelog h3 {
+  border: unset;
+  font-weight: 700;
+  text-indent: 30px;
+}
+.content .changelog h4 {
+  border: unset;
+  font-weight: 600;
+  text-indent: 30px;
+}
+.content .changelog h5 {
+  border: unset;
+  font-weight: 500;
+  text-indent: 30px;
+}
+.content .changelog hr {
+  background: #D0C39B;
+  color: #D0C39B;
+}
+.content .changelog a {
+  color: #D0C39B;
+  font-size: 14px;
+}
+.content .changelog code {
+  color: #437c17;
+  background: #D0C39B;
+  border-radius: 3px;
+  font-family: "Source Code Pro";
+}
+.content .changelog img {
+  border: unset;
+}/*# sourceMappingURL=Wizard.css.map */

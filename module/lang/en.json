@@ -1,0 +1,8 @@
+{
+    "Wizard": {
+        "Error": {
+            "ModuleRequired": "Requires ${module} to be enabled",
+            "ModulesRequired": "Requires ${modules} and ${modulesLast} to be enabled"
+        }
+    }
+}
