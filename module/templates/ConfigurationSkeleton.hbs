@@ -21,7 +21,11 @@
                         {{else}}
                             {{#each configurations}}
                                 <div class="configuration">
-                                    <div class="hint" data-hint="{{localize hint}}">?</div>
+                                    <div class="tooltip hint" data-tooltip="{{localize hint}}">?</div>
+
+                                    {{#if disabled}}
+                                        <div class="tooltip error" data-tooltip="{{localize disabledMessage}}">!</div>
+                                    {{/if}}
 
                                     {{#if (eq type "checkbox")}}
                                         {{> "wizard.config.checkbox"}}
@@ -29,6 +33,9 @@
 
                                     <h5>{{localize label}}</h5>
 
+                                    {{#if (eq type "slider")}}
+                                        {{> "wizard.config.slider"}}
+                                    {{/if}}
                                     
                                 </div>
                             {{/each}}

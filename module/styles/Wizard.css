@@ -99,6 +99,7 @@
   position: relative;
   font-family: "Inter";
   margin: 0px;
+  overflow: scroll;
 }
 .content .configs .config h4 {
   background: unset !important;
@@ -141,11 +142,58 @@
   float: left;
   margin-right: 5px;
 }
+.content .configs .configuration .error {
+  background: rgba(255, 0, 0, 0.2) !important;
+  border-radius: 5px !important;
+  border: 1px solid red !important;
+  cursor: help;
+  float: left;
+  margin-right: 5px;
+  color: red;
+  font-family: "Bungee";
+  height: 21px;
+  line-height: 21px;
+  padding: 1px 5px 1px 5px;
+}
 .content .configs .configuration .checkbox {
   float: left;
   margin: 0px;
   margin-right: 5px;
   margin-top: -3px;
+}
+.content .configs .configuration .slider {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.content .configs .configuration .slider div {
+  width: 97.5%;
+  display: flex;
+  margin-bottom: 10px;
+}
+.content .configs .configuration .slider div span {
+  background: unset !important;
+  background: rgba(14, 16, 12, 0.1) !important;
+  border-radius: 0px !important;
+  border: 1px solid #D0C39B !important;
+  color: #D0C39B !important;
+  text-align: center;
+  padding-left: 3px;
+  padding-right: 3px;
+  flex: 1;
+  height: 26px;
+  line-height: 26px;
+}
+.content .configs .configuration .slider div input[type=number] {
+  background: unset !important;
+  background: rgba(14, 16, 12, 0.5) !important;
+  border-radius: 0px !important;
+  border: 1px solid #D0C39B !important;
+  color: #D0C39B !important;
+  flex: 1;
+  margin: 0 10px;
+}
+.content .configs .configuration .slider input[type=range] {
+  width: 97.5%;
 }
 .content .changelog {
   background: unset !important;

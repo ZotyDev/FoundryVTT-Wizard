@@ -142,7 +142,7 @@ export class ConfigurationSkeleton extends Application
                                 let ShouldDisable = false;
                                 RequiredModules.forEach((module) => 
                                 {
-                                    if (game.modules.get(module)?.active)
+                                    if (!game.modules.get(module)?.active)
                                     {
                                         ShouldDisable = true;
                                         DisabledModules.push(game.modules.get(module).title);
@@ -299,8 +299,8 @@ export class ConfigurationSkeleton extends Application
 
     async _handleTooltipHoverOn(html, event)
     {
-        let Hint = event.target.dataset.hint;
-        game.tooltip.activate(event.target, {text: Hint, direction: "UP"});
+        let Tooltip = event.target.dataset.tooltip;
+        game.tooltip.activate(event.target, {text: Tooltip, direction: "UP"});
     }
 
     async _handleTooltipHoverOff(html, event)
@@ -321,8 +321,8 @@ export class ConfigurationSkeleton extends Application
         html.on('click', 'a[class="expand-button"]', this._handleConfigClick.bind(this, html));
 
         // Tooltip
-        html.on('mouseenter', 'div[class="hint"]', this._handleTooltipHoverOn.bind(this, html));
-        html.on('mouseleave', 'div[class="hint"]', this._handleTooltipHoverOff.bind(this, html));
+        html.on('mouseenter', 'div[class*="tooltip"]', this._handleTooltipHoverOn.bind(this, html));
+        html.on('mouseleave', 'div[class*="tooltip"]', this._handleTooltipHoverOff.bind(this, html));
     }
 
     static async getGithubMarkdown(url) {// Supported Remote APIs

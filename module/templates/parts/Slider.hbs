@@ -1,0 +1,8 @@
+<div class="slider">
+    <div>
+        <span style="float: left">{{range.min}}</span>
+        <input type="number" min="{{range.min}}" max="{{range.max}}" {{#if step}} step="{{range.step}}" {{/if}} {{#if disabled}} disabled {{else}} value="{{value}}" {{/if}}>
+        <span style="float: right">{{range.max}}</span>
+    </div>
+    <input type="range" min="{{range.min}}" max="{{range.max}}" {{#if step}} step="{{range.step}}" {{/if}} {{#if disabled}} disabled {{else}} value="{{value}}" {{/if}}>
+</div>

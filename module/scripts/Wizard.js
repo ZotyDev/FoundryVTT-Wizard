@@ -4,6 +4,7 @@ let HandlebarsParts =
 {
     'wizard.config.name'     : 'Name.hbs',
     'wizard.config.checkbox' : 'Checkbox.hbs',
+    'wizard.config.slider'   : 'Slider.hbs',
 }
 
 Hooks.on('ready', () => 

@@ -94,6 +94,7 @@ $code: #437c17
             position: relative
             font-family: 'Inter'
             margin: 0px
+            overflow: scroll
 
             h4
                 @include default(50%)
@@ -129,11 +130,50 @@ $code: #437c17
                 float: left
                 margin-right: 5px
 
+            .error
+                background: rgba(255, 0, 0, 20%) !important
+                border-radius: 5px !important
+                border: 1px solid red !important
+                cursor: help
+                float: left
+                margin-right: 5px
+                color: red
+                font-family: 'Bungee'
+                height: 21px
+                line-height: 21px
+                padding: 1px 5px 1px 5px
+
             .checkbox
                 float: left
                 margin: 0px
                 margin-right: 5px
                 margin-top: -3px
+
+            .slider
+                margin-top: 10px
+                margin-bottom: 10px
+
+                div
+                    width: 97.5%
+                    display: flex
+                    margin-bottom: 10px
+                
+                    span
+                        @include default(10%)
+                        text-align: center
+                        padding-left: 3px
+                        padding-right: 3px
+                        flex: 1
+                        height: 26px
+                        line-height: 26px
+
+                    input[type="number"]
+                        @include default(50%)
+                        flex: 1
+                        margin: 0 10px
+
+                input[type="range"]
+                    width: 97.5%
 
     .changelog
         @include default(50%)
