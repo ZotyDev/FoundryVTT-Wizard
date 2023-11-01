@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//                                _                  _ 
+//                                _                  _
 //                               (_)                | |
 //                      __      ___ ______ _ _ __ __| |
 //                      \ \ /\ / / |_  / _` | '__/ _` |
@@ -21,7 +21,7 @@
 //! you encounter some design choices that differ from what you are trying to do
 //! feel free to copy Wizard and do your own changes, its licensed under MIT...
 //! As a last note, this module provides a very specific solution to a very
-//! specific problem, the main focus of Wizard is to let players configure the 
+//! specific problem, the main focus of Wizard is to let players configure the
 //! smallest details of your module, the module was created because OIF got too
 //! complex for the Foundry's default setting manager, if you are using
 //! configurations that have dependencies and incompatibilies then Wizard is the
@@ -33,7 +33,7 @@ export class ConfigurationSkeleton extends Application
     {
         const DefaultOptions = super.defaultOptions;
 
-        const OverrideOptions = 
+        const OverrideOptions =
         {
             closeOnSubmit : false,
             height        : 'auto',
@@ -54,7 +54,7 @@ export class ConfigurationSkeleton extends Application
     ////////////////////////////////////////////////////////////////////////////
     // Data
     ////////////////////////////////////////////////////////////////////////////
-    static Data = 
+    static Data =
     {
         Structured: {},
         Loose     : {}
@@ -69,7 +69,7 @@ export class ConfigurationSkeleton extends Application
         ConfigurationSkeleton.Data.Loose[options.module] = {};
         let Data = ConfigurationSkeleton.Data.Structured[options.module];
         Data.name = options.module;
-        
+
         // Gets the URL for bug reporting
         ConfigurationSkeleton.Data.Structured[options.module].bugs = game.modules.get(options.module).bugs;
 
@@ -77,7 +77,7 @@ export class ConfigurationSkeleton extends Application
         ConfigurationSkeleton.UpdateChangelog(Data);
 
         // Register the configs into the world
-        options.data.topics.forEach((topic) => 
+        options.data.topics.forEach((topic) =>
         {
             // Does it have settings?
             if (topic.settings != undefined)
@@ -92,7 +92,7 @@ export class ConfigurationSkeleton extends Application
                         setting.configurations.forEach((configuration) =>
                         {
                             // Build the settings
-                            let FoundrySettingOptions = 
+                            let FoundrySettingOptions =
                             {
                                 name   : configuration['name'],
                                 hint   : configuration['hint'],
@@ -107,12 +107,12 @@ export class ConfigurationSkeleton extends Application
                                 case 'checkbox':
                                     FoundrySettingOptions['type'] = Boolean;
                                     break;
-                                
+
                                 case 'slider':
                                     FoundrySettingOptions['type'] = Number;
                                     FoundrySettingOptions['range'] = configuration['range'];
                                     break;
-                                
+
                                 case 'string':
                                     FoundrySettingOptions['type'] = String;
                                     break;
@@ -140,7 +140,7 @@ export class ConfigurationSkeleton extends Application
                                 // Check if the required modules are active
                                 let DisabledModules = [];
                                 let ShouldDisable = false;
-                                RequiredModules.forEach((module) => 
+                                RequiredModules.forEach((module) =>
                                 {
                                     if (!game.modules.get(module)?.active)
                                     {
@@ -168,7 +168,7 @@ export class ConfigurationSkeleton extends Application
                                     else if (DisabledModules.length > 2)
                                     {
                                         let InnerMessage = '';
-                                        for (let index = 0; index < DisabledModules.length; index++) 
+                                        for (let index = 0; index < DisabledModules.length; index++)
                                         {
                                             const ModuleTitle = DisabledModules[index];
                                             InnerMessage = `${InnerMessage}, ${ModuleTitle}`;
@@ -203,7 +203,7 @@ export class ConfigurationSkeleton extends Application
                 // Return if the config is enabled alongside the value, if it is
                 // disabled then the default value should be returned
                 let ReturnValue = { enabled: !Config.disabled };
-                if (Config.disabled) 
+                if (Config.disabled)
                 {
                     ReturnValue.value = Config.default;
                 }
@@ -240,7 +240,7 @@ export class ConfigurationSkeleton extends Application
             {
                 // Set the configuration inside Foundry
                 await game.settings.set(module, config, value);
-                
+
                 // Set the configuration inside Wizard
                 ConfigurationSkeleton.Data.Loose[module][configuration].value = value;
             }
@@ -264,7 +264,7 @@ export class ConfigurationSkeleton extends Application
         let ClickedElement = html.target;
         let SelectedId = ClickedElement.dataset.id;
 
-        ConfigurationSkeleton.Data.Structured[this.options.module].topics.forEach((e) => 
+        ConfigurationSkeleton.Data.Structured[this.options.module].topics.forEach((e) =>
         {
             if (e.id == SelectedId)
             {
@@ -286,7 +286,7 @@ export class ConfigurationSkeleton extends Application
         let ClickedElement = $(event.currentTarget)[0];
         let CurrentTopic = ConfigurationSkeleton.Data.Structured[this.options.module].currentTopic;
 
-        CurrentTopic.settings.forEach((setting) => 
+        CurrentTopic.settings.forEach((setting) =>
         {
             if (setting != undefined && setting.id == ClickedElement.dataset.id)
             {

@@ -1,7 +1,7 @@
 {
     "id": "wizard",
     "title": "🧙‍♂️ Wizard (Library)",
-    "description": "Wizard is a library for creating complex configurations and hints, its focus is to provide fine tunning for small details and config interactions.",
+    "description": "Library for creating complex configurations and hints, its focus is to provide fine tunning for small details and config interactions.",
     "version": "0.0.1",
     "library": true,
     "authors": [
